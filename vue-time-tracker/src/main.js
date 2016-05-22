@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App'
 import Home from './components/Home.vue'
 import Hello from './components/Hello.vue'
+import LogTime from './components/LogTime.vue'
+import TimeEntries from './components/TimeEntries.vue'
 
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
@@ -20,6 +22,14 @@ router.map({
   },
   '/hello': {
     component: Hello
+  },
+  '/time-entries': {
+    component: TimeEntries,
+    subRoutes: {
+      '/log-time': {
+        component: LogTime
+      }
+    }
   }
 })
 
